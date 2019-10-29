@@ -13,10 +13,10 @@
 # limitations under the License.
 
 # page performance metrics and screenshots stored in these GCS buckets
-BUCKET_METRICS: page-metrics-test-697907484267
+BUCKET_METRICS: $METRICS_BUCKET
 
 # Parsed page metrics persisted to the Collection
-METRICS_COLLECTION: page-metrics
+METRICS_COLLECTION: $METRICS_COLLECTION
 
 # Max allowed time (ms) to FirstMeaningfulPaint
 MAX_TIME_MEANINGFUL_PAINT: "3000"
@@ -25,4 +25,4 @@ MAX_TIME_MEANINGFUL_PAINT: "3000"
 ALERT_TOPIC: performance-alerts
 
 # Only allow analysis of certain domains. Regex.
-ALLOWED_HOSTS: www\.greenpeace\.org|www\.greenpeace\.ch
+ALLOWED_HOSTS: $ALLOWED_HOSTS
