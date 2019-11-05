@@ -24,6 +24,10 @@ METRICS_COLLECTION ?= page-metrics
 
 all: clean config bucket functions/env-vars.yaml functions
 
+list:
+	gcloud functions list
+	gcloud scheduler jobs list
+
 # =============================================================================
 
 clean:
@@ -72,3 +76,5 @@ schedule: service-account
     --time-zone="UTC" \
     --max-retry-attempts=3 \
     --min-backoff=30s
+
+# =============================================================================
