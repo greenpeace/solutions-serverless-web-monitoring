@@ -26,7 +26,7 @@ variable "fscollection_analysis" {
   default = "page-metrics"
 }
 variable "allowed_hosts" {
-  default = "www\\.example\\.com|cloud\\.google\\.com"
+  default = "www\\.greenpeace\\.org|www\\.greenpeace\\.ch"
 }
 variable "max_time_to_meaningful_paint" {
   default = 3000

@@ -15,6 +15,7 @@
 import backoff
 import json
 import pytest
+import io
 
 from googleapiclient.discovery import build
 import google.auth
@@ -33,11 +34,11 @@ ALERT_SUBSCRIPTION = None
 
 # [START main-tests-block]
 def test_e2e_pass():
-  run_pipeline('http://www.example.com/', True)
+  run_pipeline('https://www.greenpeace.org/robots.txt', True)
 
 
 def test_e2e_fail():
-  run_pipeline('https://cloud.google.com/docs/tutorials', False)
+  run_pipeline('https://www.greenpeace.org/international/', False)
 
 
 def run_pipeline(url, should_pass):
@@ -160,7 +161,7 @@ def setup(pytestconfig):
   # if we used Terraform to create the GCP resources, use the output variables
   if pytestconfig.getoption('tfstate') is not None:
     tf_state_file = pytestconfig.getoption('tfstate')
-    with open(tf_state_file, 'r', encoding='utf-8') as fp:
+    with io.open(tf_state_file, 'r', encoding='utf-8') as fp:
       tf_state = json.load(fp)
       tf_output_vars = tf_state['outputs']
       PROJECT = tf_output_vars['project']['value']
